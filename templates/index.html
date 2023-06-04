@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Datos de Sensores</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <style>
+        body {
+            padding: 20px;
+            background-size: cover;
+            background-position: center;
+            color: #ffffff; /* Color del texto */
+        }
+
+        .container {
+            background-color: rgba(0, 0, 0, 0.7); /* Color de fondo del contenedor */
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        table {
+            color: #ffffff; /* Color del texto en la tabla */
+        }
+
+        th {
+            background-color: #343a40; /* Color de fondo de las celdas de encabezado */
+        }
+
+        td, th {
+            text-align: center;
+            padding: 10px;
+        }
+
+        .weather {
+            font-weight: bold;
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="mt-4 mb-4">Datos de Sensores</h1>
+        <table class="table table-bordered">
+            <thead class="thead-dark">
+                <tr>
+                    <th>Humedad (%)</th>
+                    <th>Temperatura (C)</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for item in data %}
+                <tr>
+                    <td>{{ item.humidity }}</td>
+                    <td>{{ item.temperature }}</td>
+                </tr>
+                <tr>
+                    <td colspan="2" class="weather">Today's weather: {{ temperatura }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+</body>
+</html>
